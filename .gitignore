@@ -1,4 +1,10 @@
 *.exe
 *.zip
-.idea/
 *.pyc
+*.spec
+.idea/
+__pycache__/
+env/
+dist/
+build/
+
