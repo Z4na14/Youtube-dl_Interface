@@ -1,10 +1,10 @@
 import tkinter
-from moviepy.editor import *
+from moviepy.audio.io.AudioFileClip import AudioFileClip
 from shutil import move
 from glob import glob
-from os import getlogin, remove
-from os import getlogin, system
+from os import getlogin, system, remove
 from pathlib import Path
+
 
 usuario = getlogin()
 path = Path().absolute()
@@ -24,12 +24,13 @@ def mp3():
         url = url[::-1]
         url = url[16:]
         url = url[::-1]
-        return (f'./{url}.mp3')
+        return (f'{url}.mp3')
 
-    for a in glob('./*.m4a'):
-        m4a.append(a)
+    for a in glob('.\*.m4a'):
+        m4a.append(str(path)+a[1:])
 
     for a in m4a:
+        print(a)
         audioClip = AudioFileClip(a)
         convertedFile = renombrar_mp3(a)
         audioClip.write_audiofile(convertedFile)
