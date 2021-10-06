@@ -1,6 +1,6 @@
 from os import getlogin, system
 from pathlib import Path
-import conversor
+from conversor import mp3 , mp4 as conversor
 
 usuario = getlogin()
 path = Path().absolute()

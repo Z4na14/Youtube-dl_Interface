@@ -17,14 +17,11 @@ def mp3():
     for a in glob('./*.m4a'):
         m4a.append(a)
 
-    pene = input()
-
     for a in m4a:
         audioClip = moviepy.AudioFileClip(a)
         convertedFile = renombrar_mp3(a)
         audioClip.write_audiofile(convertedFile)
         audioClip.close()
-        pene = input()
         move(renombrar_mp3(a), f'C:/Users/{usuario}/Desktop')
         remove(a)
 
